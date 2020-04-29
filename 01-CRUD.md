@@ -4,7 +4,7 @@ Create, read, update, delete.
 
 - [Managing tables](#managing-tables)
 - [Querying data](#querying-data-from-one-or-more-tables)
-  - [Aggregation](#aggregation-functions)
+  - [Aggregation](#aggregate-functions)
   - [Merge](#merging-tables)
 - [Operators](#sql-operators)
 - [Insert, Update, Delete](#insert-update-delete)

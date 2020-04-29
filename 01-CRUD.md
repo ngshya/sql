@@ -1,5 +1,15 @@
 # CRUD
 
+Create, read, update, delete.
+
+- [Managing tables](#managing-tables)
+- [Querying data](#querying-data-from-one-or-more-tables)
+  - [Aggregation](#aggregation-functions)
+  - [Merge](#merging-tables)
+- [Operators](#sql-operators)
+- [Insert, Update, Delete](#insert-update-delete)
+
+
 ## Managing tables
 
 Create a new table with three columns
@@ -127,6 +137,15 @@ SELECT c1, c2 FROM t
 ORDER BY c1 
 LIMIT n OFFSET offset;
 ```
+
+### Aggregate Functions
+
+- AVG
+- COUNT
+- SUM
+- MAX
+- MIN
+
 Group rows using an aggregate function
 ```sql
 SELECT c1, aggregate(c2)
@@ -141,6 +160,8 @@ FROM t
 GROUP BY c1
 HAVING condition;
 ```
+
+### Merging tables
 
 Inner join t1 and t2
 ```sql

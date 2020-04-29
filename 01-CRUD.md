@@ -3,6 +3,7 @@
 Create, read, update, delete.
 
 - [Managing tables](#managing-tables)
+  - [Indexes](#indexes)
 - [Querying data](#querying-data-from-one-or-more-tables)
   - [Aggregation](#aggregate-functions)
   - [Merge](#merging-tables)
@@ -100,6 +101,25 @@ CREATE TABLE t(
      c1 INT PRIMARY KEY,
      c2 VARCHAR NOT NULL
 );
+```
+
+### Indexes
+
+Create an index on c1 and c2 of the t table
+```sql
+CREATE INDEX idx_name 
+ON t(c1,c2);
+```
+
+Create a unique index on c3, c4 of the t table
+```sql
+CREATE UNIQUE INDEX idx_name
+ON t(c3,c4)
+```
+
+Drop an index
+```sql
+DROP INDEX idx_name;
 ```
 
 ## Querying data from one or more tables

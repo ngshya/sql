@@ -1,4 +1,96 @@
-# Querying Data From Tables
+# CRUD
+
+## Managing tables
+
+Create a new table with three columns
+```sql
+CREATE TABLE t (
+     id INT PRIMARY KEY,
+     name VARCHAR NOT NULL,
+     price INT DEFAULT 0
+);
+```
+
+Delete the table from the database
+```sql
+DROP TABLE t ;
+```
+
+Add a new column to the table
+```sql
+ALTER TABLE t ADD column;
+```
+
+Drop column c from the table
+```sql
+ALTER TABLE t DROP COLUMN c ;
+```
+
+Add a constraint
+```sql
+ALTER TABLE t ADD constraint;
+```
+
+Drop a constraint
+```sql
+ALTER TABLE t DROP constraint;
+```
+
+Rename a table from t1 to t2
+```sql
+ALTER TABLE t1 RENAME TO t2;
+```
+
+Rename column c1 to c2
+```sql
+ALTER TABLE t1 RENAME c1 TO c2 ;
+```
+
+Remove all data in a table
+```sql
+TRUNCATE TABLE t;
+```
+
+Set c1 and c2 as a primary key
+```sql
+CREATE TABLE t(
+    c1 INT, c2 INT, c3 VARCHAR,
+    PRIMARY KEY (c1,c2)
+);
+```
+
+Set c2 column as a foreign key
+```sql
+CREATE TABLE t1(
+    c1 INT PRIMARY KEY,  
+    c2 INT,
+    FOREIGN KEY (c2) REFERENCES t2(c2)
+);
+```
+
+Make the values in c1 and c2 unique
+```sql
+CREATE TABLE t(
+    c1 INT, c1 INT,
+    UNIQUE(c2,c3)
+);
+```
+
+Ensure c1 > 0 and values in c1 >= c2
+```sql
+CREATE TABLE t(
+  c1 INT, c2 INT,
+  CHECK(c1> 0 AND c1 >= c2)
+);
+```
+
+Set values in c2 column not NULL
+```sql
+CREATE TABLE t(
+     c1 INT PRIMARY KEY,
+     c2 VARCHAR NOT NULL
+);
+```
 
 ## Querying data from one or more tables
 

@@ -4,6 +4,7 @@ Create, read, update, delete.
 
 - [Managing tables](#managing-tables)
   - [Create or drop tables](#create-or-drop-tables)
+  - [Constraint](#constraint)
   - [Rename tables or columns](#renaming)
   - [Set keys](#set-keys)
   - [Set indexes](#set-indexes)
@@ -19,6 +20,7 @@ Create, read, update, delete.
 
 ### Create or Drop Tables
 
+General syntax
 ```sql
 CREATE TABLE TableName(
   AttributeName Domain [ DefaultValue ] [ Constraints ]
@@ -26,6 +28,7 @@ CREATE TABLE TableName(
   [ OtherConstraints ]
 )
 ```
+The constraints could be also intra-relational (es. unique(FirstName, Surname)).
 
 Create a new table with three columns
 ```sql
@@ -51,6 +54,13 @@ Drop column c from the table
 ALTER TABLE t DROP COLUMN c ;
 ```
 
+Remove all data in a table
+```sql
+TRUNCATE TABLE t;
+```
+
+### Constraint
+
 Add a constraint
 ```sql
 ALTER TABLE t ADD constraint;
@@ -61,9 +71,19 @@ Drop a constraint
 ALTER TABLE t DROP constraint;
 ```
 
-Remove all data in a table
+Reaction policies
 ```sql
-TRUNCATE TABLE t;
+CREATE TABLE Employee(
+  FirstName character(20) NOT NULL,
+  Surname character(20) NOT NULL,
+  Dept char(20) NOT NULL,
+  PRIMARY KEY(RegNo),
+  FOREIGN KEY (Dept)
+    REFERENCES DEpartment(DeptName), 
+    ON DELETE SET NULL,
+    ON UPDATE CASCADE,
+  UNIQUE(FirstName Surname)
+)
 ```
 
 ### Renaming

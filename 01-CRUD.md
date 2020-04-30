@@ -72,6 +72,8 @@ Drop a constraint
 ALTER TABLE t DROP constraint;
 ```
 
+You can aso use CHECK to express arbitrary constraints during the schema definition and ASSERTIONS to define the constrains outside of the table definitions.
+
 Reaction policies
 ```sql
 CREATE TABLE Employee(
@@ -291,7 +293,7 @@ FROM t1 A
 INNER JOIN t2 B ON condition;
 ```
 
-## SQL Operators
+### SQL Operators
 
 Combine rows from two queries
 ```sql
@@ -379,7 +381,15 @@ WHERE Salary >= ALL (SELECT Salary
                      FROM Employee)
 ```
 
-
+```sql
+SELECT *
+FROM Person P
+WHERE EXISTS (SELECT * 
+              FROM Person P1
+              WHERE P1.FirstName = P.FirstName 
+              AND P1.Surname = P.Surname
+              AND P1.TaxCode <> P.TaxCode)
+```
 
 ## Insert, Update, Delete
 
@@ -427,3 +437,5 @@ Delete subset of rows in a table
 DELETE FROM t
 WHERE condition;
 ```
+
+

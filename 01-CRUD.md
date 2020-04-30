@@ -13,6 +13,7 @@ Create, read, update, delete.
   - [Aggregation](#aggregate-functions)
   - [Merge](#merging-tables)
 - [Operators](#sql-operators)
+- [Nested queries](#nested-queries)
 - [Insert, Update, Delete](#insert-update-delete)
 
 
@@ -162,6 +163,16 @@ DROP INDEX idx_name;
 
 ## Querying data from one or more tables
 
+General syntax
+```sql
+SELECT TargetList
+FROM TableList
+[ WHERE Condition]
+[ GROUP BY GroupingAttributeList ]
+[ HAVING AggregateCondition ]
+[ ORDER BY OrderingAttributeList ]
+```
+
 ### Select, filter, order
 
 Query data in columns c1, c2 from a table
@@ -179,6 +190,7 @@ Query data and filter rows with a condition
 SELECT c1, c2 FROM t
 WHERE condition;
 ```
+The condition can be a complex logical expression containing AND, OR, LIKE.
 
 Query distinct rows from a table
 ```sql
@@ -191,11 +203,19 @@ Sort the result set in ascending or descending order
 SELECT c1, c2 FROM t
 ORDER BY c1 ASC [DESC];
 ```
+
 Skip offset of rows and return the next n rows
 ```sql
 SELECT c1, c2 FROM t
 ORDER BY c1 
 LIMIT n OFFSET offset;
+```
+
+Query two different tables
+```sql
+SELECT t1.FirstName, t1.Surname, t2.City
+FROM Employee as t1, Department as t2
+WHERE t1.DEpt = t2.DeptName
 ```
 
 ### Aggregate Functions
@@ -317,6 +337,49 @@ Check if values in a table is NULL or not
 SELECT c1, c2 FROM t
 WHERE  c1 IS [NOT] NULL;
 ```
+
+### Nested Queries
+
+```sql
+SELECT FirstName, Surname
+FROM EMPLOYEE
+WHERE Dept = ANY (SELECT DeptName
+                  FROM Department
+                  WHERE City = 'London')
+```
+
+```sql
+SELECT FirstName, Surname
+FROM EMPLOYEE
+WHERE Dept <> ALL (SELECT DeptName
+                   FROM Department
+                   WHERE City = 'London')
+```
+
+```sql
+SELECT FirstName, Surname
+FROM EMPLOYEE
+WHERE Dept IN (SELECT DeptName
+               FROM Department
+               WHERE City = 'London')
+```
+
+```sql
+SELECT FirstName, Surname
+FROM EMPLOYEE
+WHERE Dept NOT IN (SELECT DeptName
+                   FROM Department
+                   WHERE City = 'London')
+```
+
+```sql
+SELECT Dept
+FROM Employee
+WHERE Salary >= ALL (SELECT Salary
+                     FROM Employee)
+```
+
+
 
 ## Insert, Update, Delete
 

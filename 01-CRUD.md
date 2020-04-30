@@ -4,7 +4,7 @@ Create, read, update, delete.
 
 - [Managing tables](#managing-tables)
   - [Create or drop tables](#create-or-drop-tables)
-  - [Constraint](#constraint)
+  - [Constraints and reaction policies](#constraints-and-reaction-policies)
   - [Rename tables or columns](#renaming)
   - [Set keys](#set-keys)
   - [Set indexes](#set-indexes)
@@ -59,7 +59,7 @@ Remove all data in a table
 TRUNCATE TABLE t;
 ```
 
-### Constraint
+### Constraints and Reaction Policies
 
 Add a constraint
 ```sql

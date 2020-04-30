@@ -17,7 +17,7 @@ Create, read, update, delete.
 
 ## Managing tables
 
-### Create Tables or Drop Tables
+### Create or Drop Tables
 
 Create a new table with three columns
 ```sql

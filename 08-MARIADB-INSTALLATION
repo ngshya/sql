@@ -1,0 +1,23 @@
+# MariaDB Installation on Google Cloud Platform
+
+## Install MariaDB on Ubuntu 20.04
+- https://computingforgeeks.com/install-mariadb-server-on-ubuntu-focal-fossa/
+
+## Introduction to MariaDB  
+- https://mariadb.com/kb/en/connecting-to-mariadb/ 
+- https://www.guru99.com/mariadb-tutorial-install.html (jump the initial part)
+
+## Install phpmyadmin
+- https://www.fosslinux.com/6745/how-to-install-phpmyadmin-with-lamp-stack-on-ubuntu.htm
+- https://www.tecmint.com/setup-https-ssl-certificates-to-secure-phpmyadmin-login/
+- https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-18-04
+
+You need to:
+
+- Install Apache2
+- Install phpmyadmin
+- Activate HTTPS
+- Use let's encrypt
+
+## MariaDB and Python
+- https://github.com/mariadb-corporation/mariadb-connector-python/wiki/usage.md

@@ -20,7 +20,7 @@ Create, read, update, delete.
 ### Create or Drop Tables
 
 ```sql
-create table TableName(
+CREATE TABLE TableName(
   AttributeName Domain [ DefaultValue ] [ Constraints ]
   {, AttributeName Domain [ DefaultValue ] [ Constraints ] }
   [ OtherConstraints ]

@@ -5,7 +5,7 @@
 | String Data Type | Description |
 | :---- | :---- |
 | char(size) | The size denotes the number of characters to be stored. It stores a maximum of 255 characters. Fixed-length strings. |
-| varchar(size) | The size denotes the number of characters to be stored. It stores a maximum of 255 characters. Variable-length strings. |
+| **varchar(size)** | The size denotes the number of characters to be stored. It stores a maximum of 255 characters. Variable-length strings. |
 | text(size) | The size denotes the number of characters to be stored. It stores a maximum of 255 characters. Fixed-length strings. |
 | binary(size) | The size denotes the number of characters to be stored. It stores a maximum of 255 characters. Fixed-size strings. |
 
@@ -16,7 +16,7 @@
 |bit | A very small integer value equivalent to tinyint(1). Signed values range between -128 and 127. Unsigned values range between 0 and 255. |
 |int(m) | A standard integer value. Signed values range between -2147483648 and 2147483647. Unsigned values range between 0 and 4294967295. |
 |float(m, d) | A floating point number with single precision. |
-|double(m,d) | A floating point number with double precision.|
+|**double(m,d)** | A floating point number with double precision.|
 |float(p) | A floating point number. |
 
 ## Date/Time Data Types

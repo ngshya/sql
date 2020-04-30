@@ -3,7 +3,7 @@
 Create, read, update, delete.
 
 - [Managing tables](#managing-tables)
-  - [Create tables](#create-tables)
+  - [Create or drop tables](#create-or-drop-tables)
   - [Rename tables or columns](#renaming)
   - [Set keys](#set-keys)
   - [Set indexes](#set-indexes)
@@ -17,7 +17,7 @@ Create, read, update, delete.
 
 ## Managing tables
 
-### Create Tables
+### Create Tables or Drop Tables
 
 Create a new table with three columns
 ```sql

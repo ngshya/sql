@@ -19,6 +19,14 @@ Create, read, update, delete.
 
 ### Create or Drop Tables
 
+```sql
+create table TableName(
+  AttributeName Domain [ DefaultValue ] [ Constraints ]
+  {, AttributeName Domain [ DefaultValue ] [ Constraints ] }
+  [ OtherConstraints ]
+)
+```
+
 Create a new table with three columns
 ```sql
 CREATE TABLE t (

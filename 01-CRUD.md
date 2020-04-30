@@ -4,8 +4,8 @@ Create, read, update, delete.
 
 - [Managing tables](#managing-tables)
   - [Create tables](#create-tables)
-  - [Rename tables or columns][#renaming]
-  - [Set keys][#set-keys]
+  - [Rename tables or columns](#renaming)
+  - [Set keys](#set-keys)
   - [Set indexes](#set-indexes)
 - [Querying data](#querying-data-from-one-or-more-tables)
   - [Select, filter, order](#select-filter-order)

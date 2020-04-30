@@ -3,8 +3,12 @@
 Create, read, update, delete.
 
 - [Managing tables](#managing-tables)
-  - [Indexes](#indexes)
+  - [Create tables](#create-tables)
+  - [Rename tables or columns][#renaming]
+  - [Set keys][#set-keys]
+  - [Set indexes](#set-indexes)
 - [Querying data](#querying-data-from-one-or-more-tables)
+  - [Select, filter, order](#select-filter-order)
   - [Aggregation](#aggregate-functions)
   - [Merge](#merging-tables)
 - [Operators](#sql-operators)
@@ -12,6 +16,8 @@ Create, read, update, delete.
 
 
 ## Managing tables
+
+### Create Tables
 
 Create a new table with three columns
 ```sql
@@ -47,6 +53,13 @@ Drop a constraint
 ALTER TABLE t DROP constraint;
 ```
 
+Remove all data in a table
+```sql
+TRUNCATE TABLE t;
+```
+
+### Renaming
+
 Rename a table from t1 to t2
 ```sql
 ALTER TABLE t1 RENAME TO t2;
@@ -57,10 +70,7 @@ Rename column c1 to c2
 ALTER TABLE t1 RENAME c1 TO c2 ;
 ```
 
-Remove all data in a table
-```sql
-TRUNCATE TABLE t;
-```
+### Set Keys
 
 Set c1 and c2 as a primary key
 ```sql
@@ -103,7 +113,7 @@ CREATE TABLE t(
 );
 ```
 
-### Indexes
+### Set Indexes
 
 Create an index on c1 and c2 of the t table
 ```sql
@@ -123,6 +133,8 @@ DROP INDEX idx_name;
 ```
 
 ## Querying data from one or more tables
+
+### Select, filter, order
 
 Query data in columns c1, c2 from a table
 ```sql
